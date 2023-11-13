@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Product Detail Page";
+    Layout = "~/Views/Shared/Master_Layout.cshtml";
+    var productId = Request.QueryString["product"];
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/FRONTEND/Master_Layout.css" rel="stylesheet" />
+    <link href="~/Content/FRONTEND/Product_Detail.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="scale">
+        <!--~~~~~~~~~~~~~~~~~~~~~PRODUCT-DETAIL~~~~~~~~~~~~~~~~~~~~~-->
+
+        <h1 id="product-title">Product Name</h1>
+        <div class="product-detail">
+            <div class="product-left">
+                <img id="product-image" src="" alt="Product Image">
+            </div>
+            <div class="product-right">
+                <p>Gíá tại Hồ Chí Minh</p>
+                <div class="size-selection">
+                    <label for="size">Kích cỡ:</label>
+                    <select id="size" name="size">
+                        <option value="small">29</option>
+                        <option value="medium">30</option>
+                        <option value="large">31</option>
+                        <option value="x-large">32</option>
+                        <option value="xx-large">33</option>
+                        <!-- Add more size options as needed -->
+                    </select>
+                </div>
+                <h1>Mô Tả</h1>
+                <p id="product-description">Product description goes here.</p>
+                <strong id="product-price">Price goes here</strong>
+
+                <div class="buy-now-box" id="buyNowBox">
+                    <strong class="buy-now-text">MUA NGAY</strong>
+                </div>
+
+                <div class="dialog-container" id="dialogContainer">
+                    <div class="dialog-box">
+                        <p>Bạn đã quyết định mua sản phẩm ?</p>
+                        <div class="dialog-buttons">
+                            <button id="btnYes">Đúng</button>
+                            <button id="btnNo">Không</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="~/Scripts/FRONTEND/Product_Detail.js"></script>
+    </div>
+</body>
+</html>

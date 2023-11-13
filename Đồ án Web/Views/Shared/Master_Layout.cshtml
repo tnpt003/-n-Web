@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/FRONTEND/Master_Layout.css" rel="stylesheet" />
+    <link href="~/Content/FRONTEND/Home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Master_Layout</title>
+</head>
+<body>
+    @* HEADER *@
+    <header>
+        <a href="~/Views/FrontEnd/Index.cshtml">
+            <img src="~/hình/Header/logo.png" alt="Company Logo" />
+        </a>
+    </header>
+    <nav>
+        <div class="container">
+            <ul class="product-categories">
+                <li><a href="/Home/Index"><img src="~/hình/Header/logo.png" alt="Company Logo" style="width: 80px;" /></a></li>
+                <li><a href="#">Hồ Chí Minh</a></li>
+                <li>
+                    <div class="input-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>@Html.ActionLink("Giỏ hàng", "Cart", "Cart")</a></li>
+                <li>@ViewBag.IsAuthenticated</li>
+                @if (ViewBag.IsAuthenticated != null && ViewBag.IsAuthenticated == true)
+                {
+                    <!-- User is authenticated, display logged-in user info or other content -->
+                    <!-- Example: <li>Welcome, [User Name]!</li> -->
+                }
+                else
+                {
+                    <!-- User is not authenticated, display login and sign-up links -->
+                    <li>@Html.ActionLink("Đăng Ký", "SignUp", "Account")</li>
+                    <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
+                }
+
+                <li><a href="#">24h Trend</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="menu-bar">
+        <div class="container">
+            <div class="menu-bar-content">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="#">Áo khoác</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Áo khoác Ni</p></a>
+                            <a href="#"><p>Áo khoác Dù</p></a>
+                            <a href="#"><p>Áo khoác Kaki</p></a>
+                            <a href="#"><p>Áo khoác Nam</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Áo thun</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Áo thun tay ngắn</p></a>
+                            <a href="#"><p>Áo thun tay dài</p></a>
+                            <a href="#"><p>Áo thun Polo</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Sơ mi</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Sơ mi tay ngắn</p></a>
+                            <a href="#"><p>Sơ mi tay dài</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Quần dài</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Quần Kaki</p></a>
+                            <a href="#"><p>Quần Tây</p></a>
+                            <a href="#"><p>Quần Jean</p></a>
+                            <a href="#"><p>Quần Jagger Thun</p></a>
+                            <a href="#"><p>Quần Jagger Kaki</p></a>
+                            <a href="#"><p>Quần Kaki</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Quần short</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Quần Short Kaki</p></a>
+                            <a href="#"><p>Quần Short Thun</p></a>
+                            <a href="#"><p>Quần Short Jean</p></a>
+                            <a href="#"><p>Quần Short Tây</p></a>
+                            <a href="#"><p>Quần Short Dù</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Phụ kiện</a><i class="fa-solid fa-chevron-down"></i>
+                        <div class="hidden-content">
+                            <a href="#"><p>Ví da</p></a>
+                            <a href="#"><p>Dây vịt</p></a>
+                            <a href="#"><p>Nơ - Cà Vạt</p></a>
+                            <a href="#"><p>Vớ (Tất)</p></a>
+                            <a href="#"><p>Nón</p></a>
+                            <a href="#"><p>Ví da</p></a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">All</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Sale</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @* FOOTER *@
+
+    <div class="Footer-main">
+        <footer>
+            <div class="footer-section">
+                <h3>PHỤC VỤ</h3>
+                <p>Tích điểm Quà tặng VIP.</p>
+                <p>Lịch sử mua hàng.</p>
+                <p>Tìm hiểu về mua trả góp.</p>
+                <p>Chính sách bảo hành.</p>
+                <p class="more-link" id="toggleMore">Xem Thêm <i class="fa-solid fa-chevron-down"></i></p>
+                <!-- Initially hidden content -->
+                <div id="additionalContent" style="display: none;">
+                    <p>Lịch sử mua hàng.</p>
+                    <p>Tìm hiểu về mua trả góp.</p>
+                    <p>Chính sách đổi trả.</p>
+                    <p>Giao hàng & Thanh toán.</p>
+                    <p>Hướng dẫn mua online.</p>
+                    <p>Bán hàng doanh nghiệp.</p>
+                    <p>Phiếu mua hàng.</p>
+                    <p>In hóa đơn điện tử.</p>
+                    <p>Quy chế hoạt động.</p>
+                    <p>Chính sách xử lý dữ liệu cá nhân.</p>
+                    <p>Nội quy cửa hàng.</p>
+                    <p>Chất lượng phục vụ.</p>
+                    <p>Cảnh báo giả mạo.</p>
+                    <p>Chính sách khui hộp sản phẩm Apple.</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>NỘI DUNG</h3>
+                <p>Giới thiệu công ty.</p>
+                <p>Tuyển dụng.</p>
+                <p>Gửi góp ý, khiếu nại.</p>
+                <p>Tìm siêu thị.</p>
+                <p>Xem bản mobile.</p>
+            </div>
+            <div class="footer-section">
+                <h3>HỖ TRỢ</h3>
+                <p>Tổng đài hỗ trợ (Miễn phí gọi).</p>
+                <p>Khiếu nại: 1800.1062 (8:00 - 21:30).</p>
+                <p>Bảo hành: 1800.1064 (8:00 - 21:00).</p>
+            </div>
+            <div class="footer-section">
+                <h3>DOANH NGHIỆP</h3>
+                <div class="image-container row-1">
+                    <img src="~/hình/logo-b.png" width="80" height="30" />
+                    <img src="~/hình/logo-header-gov.png" width="80" height="30" />
+                    <img src="~/hình/logo_while_2x.png" width="80" height="30" />
+                </div>
+                <p>Website cùng tập đoàn.</p>
+                <div class="image-container row-2">
+                    <img src="~/hình/NewFolder1/Logo-webmoi.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi1.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi2.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi3.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi4.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi5.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi6.png" width="60" height="30" />
+                    <img src="~/hình/NewFolder1/Logo-webmoi7.png" width="60" height="30" />
+                </div>
+            </div>
+            <script src="~/Scripts/FRONTEND/Xem_Them.js"></script>
+        </footer>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; Công ty nhóm mới thành lập. All rights reserved. </p>
+    </div>
+</body>
+</html>

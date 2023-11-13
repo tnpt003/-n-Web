@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0048bba74d447e294c04dc1c3e5e9c5" Name="Diagram1">
+        <EntityTypeShape EntityType="nhomModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.Customer" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.Order" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.OrderDetail" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.ProDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="nhomModel.User" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="nhomModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="nhomModel.FK__Order__CusPhone__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="nhomModel.FK__OrderDeta__Order__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="nhomModel.FK_ProDetail_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

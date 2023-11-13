@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Đồ_án_Web.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.NameCate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProDetail.ColorName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.NameCate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProDetail.ColorName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ProID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ProID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ProID })
+        </td>
+    </tr>
+}
+
+</table>

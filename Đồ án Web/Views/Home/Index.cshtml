@@ -1,0 +1,334 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/Master_Layout.cshtml";
+    var productId = Request.QueryString["product"];
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/FRONTEND/Master_Layout.css" rel="stylesheet" />
+    <link href="~/Content/FRONTEND/Home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--~~~~~~~~~~~~~~~~~~~~~CONTENTS~~~~~~~~~~~~~~~~~~~~~-->
+
+    <div class="big-banner">
+        <a href="#"><img src="~/hình/big banner/5313737.jpg" alt="Banner Image" /></a>
+    </div>
+    <!--SECTION1-->
+    <div class="section-title1">
+        <h3>XU HƯỚNG MUA SẮM</h3>
+        <div class="content-section1">
+            <a href="#">
+                <div class="product">
+                    <img src="~/hình/Xu hướng mua sắm/b1b4650b57eff61f8798c252a44aeb38.jpg_200x200q80.jpg_.jpg" alt="Set quần áo trend">
+                    <p>Set quần áo trend</p>
+                    <strong>Gía chỉ từ 200.000 đồng</strong>
+                </div>
+            </a>
+            <a href="#">
+                <div class="product">
+                    <img src="~/hình/Xu hướng mua sắm/vn-11134207-7qukw-lg1qdi98i0yy75.jpg" alt="Áo phông ngầu lòi">
+                    <p>Áo phông ngầu lòi</p>
+                    <strong>Gía chỉ từ 300.000 đồng</strong>
+                </div>
+            </a>
+            <a href="#">
+                <div class="product">
+                    <img src="~/hình/Xu hướng mua sắm/vn-11134207-7qukw-lhvwjkij256p40.jpg" alt="Set áo chất chơi">
+                    <p>Set áo chất chơi</p>
+                    <strong>Gía chỉ từ 250.000 đồng</strong>
+                </div>
+            </a>
+            <a href="#">
+                <div class="product">
+                    <img src="~/hình/Xu hướng mua sắm/vn-11134207-7qukw-lihs6xnexkp875.jpg" alt="Áo phông in hình đại bàng">
+                    <p>Áo phông in hình đại bàng</p>
+                    <strong>Gía chỉ từ 400.000 đồng</strong>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--SECTION2-->
+    <div class="section-title2">
+        <h3>DANH MỤC NỔI BẬT</h3>
+        <div class="content-section2">
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/1_17658cd840ec4b3d88e1e516d6f2fdd8_master.jpg" width="80" height="80" alt="ÁO THUN">
+                        <p>ÁO THUN</p>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/hma00051_d3b68cb809da407a82349546a742e372_master.jpg" width="80" height="80" alt="ÁO KHOÁC">
+                        <p>ÁO KHOÁC</p>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/1_29a8cd4870364536bad09ffe395d2ba3_master.jpg" width="80" height="80" alt="SƠ MI">
+                        <p>SƠ MI</p>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/1_ab6c61953dde42b8aacbe9c1b959f986_master.jpg" width="80" height="80" alt="QUẦN DÀI">
+                        <p>QUẦN DÀI</p>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/1_707b16004b2a4278af2433cb465a070e_master.jpg" width="80" height="80" alt="QUẦN SHORT">
+                        <p>QUẦN SHORT</p>
+                    </a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-item">
+                    <a href="#">
+                        <img src="~/hình/Danh mục nổi bật/1_289e2b3dbcd24997a7a4eb4ba02e2d52_master.jpg" width="80" height="80" alt="PHỤ KIỆN">
+                        <p>PHỤ KIỆN</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SECTION3-->
+    <div class="section-title3">
+        <h3>KHUYẾN MÃI CHỈ CÓ TRÊN ONLINE</h3>
+        <a href="#">
+            <div class="content-section3">
+                <img src="~/hình/Khuyến mãi chỉ có trên online/5092428.jpg" alt="Khuyến mãi chỉ có trên online">
+            </div>
+        </a>
+    </div>
+
+    <!--SECTION4-->
+    <div class="section-title4">
+        <h3>DỊCH VỤ TIỆN ÍCH</h3>
+        <div class="content-section4">
+            <div class="product1">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <p>Mua mã thẻ cào</p>
+                <strong>Gíảm giá 2% cho mệnh giá từ 100.000 trở lên</strong>
+            </div>
+            <div class="product1">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <p>Dịch vụ trả góp</p>
+                <strong>5% trong 1 tháng cho sản phẩm 500.000 trở lên</strong>
+            </div>
+            <div class="product1">
+                <i class="fa-solid fa-taxi"></i>
+                <p>Shipping tận nhà</p>
+                <strong>Freeship</strong>
+            </div>
+            <div class="product1">
+                <i class="fa-solid fa-tag"></i>
+                <p>thẻ giảm giá</p>
+                <strong>Áp dụng trong 3 tháng kể từ khi được nhận</strong>
+            </div>
+        </div>
+    </div>
+
+    <!--SECTION5-->
+    <div class="section-title5">
+        <h3>GỢI Ý HÔM NAY</h3>
+        <div class="content-section5">
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=1">
+                    <img src="~/hình/Gợi ý hôm nay/1_2927cf620c864fb997ef807defd82e7e_master.jpg" />
+                    <p>Móc khóa da bò Kenta PMK0001</p>
+                    <strong>19,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=2">
+                    <img src="~/hình/Gợi ý hôm nay/1_32e4055326d04de6b28f7c12f44550b9_master.jpg" />
+                    <p>Túi đeo chạy bộ PTX0003</p>
+                    <strong>250,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=3">
+                    <img src="~/hình/Gợi ý hôm nay/1_5f0144d452dc453b8f86d3e8d4f3a556_master.jpg" />
+                    <p>Áo Thun Unisex Kenta Studio ATN0146</p>
+                    <strong>295,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=4">
+                    <img src="~/hình/Gợi ý hôm nay/1_7494176c987d4479bdf849f236df4731_master.jpg" />
+                    <p>Áo Thun Unisex Saigonnese ATN014</p>
+                    <strong>295,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=5">
+                    <img src="~/hình/Gợi ý hôm nay/1_e7ba7f9307774d1b89e626e9c9396238_master.jpg" />
+                    <p>Combo Áo Quần Thể Thao ATN0149</p>
+                    <strong>250,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=6">
+                    <img src="~/hình/Gợi ý hôm nay/163_5526354919bb4e978ceda314e4483b4a_master.jpg" />
+                    <p>Vớ Cổ Dài PE Co Giãn PVO0003</p>
+                    <strong>45,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=7">
+                    <img src="~/hình/Gợi ý hôm nay/2_1a1d5b281a28429e92f730302f765a01_master.jpg" />
+                    <p>Quần tây nam slimfit viền túi QTA0042</p>
+                    <strong>350,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=8">
+                    <img src="~/hình/Gợi ý hôm nay/2_d0c88d0a8dd341a29b72fea28dbb1391_master.jpg" />
+                    <p>Quần Kaki Dài Slimfit Nam QKK0048</p>
+                    <strong>350,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=9">
+                    <img src="~/hình/Gợi ý hôm nay/28_7f3fbbe92354429bacccd09bea0b3f59_master.jpg" />
+                    <p>Vớ Cotton Cổ Ngắn PVO0001</p>
+                    <strong>39,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=10">
+                    <img src="~/hình/Gợi ý hôm nay/29_636e67277ca34eecaf0f9115d556780f_master.jpg" />
+                    <p>Quần Tây Nam Slimfit Xám Chì QTA0036</p>
+                    <strong>320,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=11">
+                    <img src="~/hình/Gợi ý hôm nay/2a_9c6f64259c5b4eb3856f7578861db397_master.jpg" />
+                    <p>Áo Thun Raglan Form Boxy ATN0151</p>
+                    <strong>295,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=12">
+                    <img src="~/hình/Gợi ý hôm nay/6_e778851a63dd4563a25b1c33c4154387_master.jpg" />
+                    <p>Áo Thun Unisex Saigonnese ATN0147</p>
+                    <strong>295,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=13">
+                    <img src="~/hình/Gợi ý hôm nay/hma00252_2a1c8c08a6e94a43a4fcbd47b2942e25_master.jpg" />
+                    <p>Ví da nam cao cấp PVN0016</p>
+                    <strong>395,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=14">
+                    <img src="~/hình/Gợi ý hôm nay/pnn0002_xl_eee6d499c1f249d199919522dcca1165_1024x1024.jpg" />
+                    <p>Móc Nơ khóa da bò Kenta PMK0001</p>
+                    <strong>50,000₫</strong>
+                </a>
+            </div>
+            <div class="image-container1">
+                <a href="~/Views/Home/Product_Detail.cshtml?product=15">
+                    <img src="~/hình/Gợi ý hôm nay/quan-kaki_3b2d61b5ebd24464b4995616b1231c71_master.jpg" />
+                    <p>Quần Jean Skinny Nam QJD0061</p>
+                    <strong>450,000₫</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/FRONTEND/Product_Detail.js"></script>
+
+    <!--SECTION6-->
+    <div class="section-title6">
+        <h3>24H TREND</h3>
+        <div class="content-section6">
+            <div class="trend-item">
+                <a href="#">
+                    <img src="~/hình/24h trend/1696920350-606-local.jpg" />
+                    <p>Sự kiện tổ chức</p>
+                </a>
+            </div>
+            <div class="trend-item">
+                <a href="#">
+                    <img src="~/hình/24h trend/1696950787-581-local.jpg" />
+                    <p>Hình ảnh thân mật của ...</p>
+                </a>
+            </div>
+            <div class="trend-item">
+                <a href="#">
+                    <img src="~/hình/24h trend/1696996463-574-local.jpg" />
+                    <p>Dọn đồ style cùng ...</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--//<img src="hình/24h trend/HCCTGDDnew1-285x350.jpg" class="right-image" />-->
+    <!--SECTION7-->
+    <div class="section-title7">
+        <h3>CHUYÊN TRANG THƯƠNG HIỆU</h3>
+        <div class="content-section7">
+            <img src="~/hình/Chuyên trang thương hiệu/logo-bieu-tuong-thoi-trang-chanel.png" />
+            <img src="~/hình/Chuyên trang thương hiệu/logo-hang-thoi-trang-noi-tieng-stone-island.png" />
+            <img src="~/hình/Chuyên trang thương hiệu/mau-logo-thoi-trang-dep-fendi.png" />
+        </div>
+    </div>
+
+    <!--SECTION8-->
+    <div class="section-title8">
+        <h3>CHUỖI MỚI DEAL KHỦNG</h3>
+        <div class="content-section8">
+            <a href="#">
+                <div class="slider">
+                    <img src="~/hình/Chuỗi mới deal khủng/760-400-760x400-1.jpg" class="slide" />
+                    <img src="~/hình/Chuỗi mới deal khủng/760x400-760x400-10.jpg" class="slide" />
+                    <img src="~/hình/Chuỗi mới deal khủng/760X400-760x400-2.jpg" class="slide" />
+                    <img src="~/hình/Chuỗi mới deal khủng/760x400-760x400-5.jpg" class="slide" />
+                    <img src="~/hình/Chuỗi mới deal khủng/760x400-760x400-8.jpg" class="slide" />
+                    <img src="~/hình/Chuỗi mới deal khủng/IP15-760-400-760x400-1.jpg" class="slide" />
+                </div>
+            </a>
+        </div>
+        <script src="~/Scripts/FRONTEND/Slider.js"></script>
+    </div>
+
+    <!--SECTION9-->
+    <div class="section-title9">
+        <h3>TÌM KIẾM NHIỀU</h3>
+        <div class="content-section9">
+            <a href="#">
+                <div class="flex-container">
+                    <p>Áo thun</p>
+                    <p>Áo khoác</p>
+                    <p>Áo sơ mi</p>
+                    <p>Quần dài</p>
+                    <p>Quần Short</p>
+                    <p>Phụ kiện</p>
+                    <p>Sale</p>
+                    <p>Hot</p>
+                    <p>Gỉảm giá</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

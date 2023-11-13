@@ -1,0 +1,78 @@
+﻿body {
+    background-color: whitesmoke;
+}
+
+.product-detail {
+    display: flex; /* Use flexbox to create a horizontal layout */
+    margin-top: 10px;
+}
+
+.product-left {
+    flex: 1; /* Take up 1/2 of the available space */
+    padding: 20px; /* Add padding for spacing */
+    border: 10px solid #ccc; /* Add a border for separation */
+    margin-right: 100px;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+    .product-left img {
+        width: 100%
+    }
+
+.product-right {
+    flex: 1; /* Take up 1/2 of the available space */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.buy-now-box {
+    background-color: mediumturquoise;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.buy-now-text {
+    color: white;
+    font-weight: bold;
+}
+
+/* Style for the dialog box */
+.dialog-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-buttons {
+    text-align: center;
+}
+
+    .size-selection {
+        margin-top: 20px;
+    }
+
+        .size-selection label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .size-selection select {
+            width: 150px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
