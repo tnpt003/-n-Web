@@ -8,7 +8,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multi" }))
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
  {
     @Html.AntiForgeryToken()
 
@@ -35,7 +35,7 @@
             @Html.LabelFor(model => model.ProImage, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <img src="@Url.Content(Model.ProImage)" style="height: 200px; width: 200px; margin: 10px;" id="previewImage" />
-                <input type="file" name="ImageUpload" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
+                <input type="file" name="ImageUpLoad" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
                 @Html.ValidationMessageFor(model => model.ProImage, "", new { @class = "text-danger" })
             </div>
         </div>

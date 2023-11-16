@@ -50,7 +50,7 @@ namespace Đồ_án_Web.Controllers
         // POST: Products/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product, HttpPostedFileBase ImageUpLoad)
+        public ActionResult Create(Product Product, HttpPostedFileBase ImageUpLoad)
         {
             try
             {
@@ -61,19 +61,19 @@ namespace Đồ_án_Web.Controllers
                         string fileName = Path.GetFileName(ImageUpLoad.FileName);
                         string imagePath = Path.Combine(Server.MapPath("~/Content/images/"), fileName);
 
-                        product.ProImage = "~/Content/images/" + fileName;
+                        Product.ProImage = "~/Content/images/" + fileName;
 
                         ImageUpLoad.SaveAs(imagePath);
                     }
 
-                    db.Products.Add(product);
+                    db.Products.Add(Product);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
 
-                ViewBag.CatID = new SelectList(db.Categories, "CatID", "NameCate", product.CatID);
-                ViewBag.ProID = new SelectList(db.ProDetails, "ProID", "ColorName", product.ProID);
-                return View(product);
+                ViewBag.CatID = new SelectList(db.Categories, "CatID", "NameCate", Product.CatID);
+                ViewBag.ProID = new SelectList(db.ProDetails, "ProID", "ColorName", Product.ProID);
+                return View(Product);
             }
             catch
             {

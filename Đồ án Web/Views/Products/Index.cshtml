@@ -30,28 +30,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProName)
-        </td>
-        <td>
-            <img src="@Url.Content(item.ProImage)" style="height: 100px; width: 100px;" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.NameCate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ProID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ProID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProName)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ProImage)" style="height: 100px; width: 100px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.NameCate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProID })
+            </td>
+        </tr>
+    }
 
 </table>
