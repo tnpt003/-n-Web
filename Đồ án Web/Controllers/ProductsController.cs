@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,6 +19,7 @@ namespace Đồ_án_Web.Controllers
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Category).Include(p => p.ProDetail);
+
             return View(products.ToList());
         }
 
@@ -39,28 +41,44 @@ namespace Đồ_án_Web.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
+            Product product = new Product();
             ViewBag.CatID = new SelectList(db.Categories, "CatID", "NameCate");
             ViewBag.ProID = new SelectList(db.ProDetails, "ProID", "ColorName");
-            return View();
+            return View(product);
         }
 
         // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProID,ProName,CatID,ProImage,CreatedDate")] Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase ImageUpLoad)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    if (ImageUpLoad != null && ImageUpLoad.ContentLength > 0)
+                    {
+                        string fileName = Path.GetFileName(ImageUpLoad.FileName);
+                        string imagePath = Path.Combine(Server.MapPath("~/Content/images/"), fileName);
 
-            ViewBag.CatID = new SelectList(db.Categories, "CatID", "NameCate", product.CatID);
-            ViewBag.ProID = new SelectList(db.ProDetails, "ProID", "ColorName", product.ProID);
-            return View(product);
+                        product.ProImage = "~/Content/images/" + fileName;
+
+                        ImageUpLoad.SaveAs(imagePath);
+                    }
+
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.CatID = new SelectList(db.Categories, "CatID", "NameCate", product.CatID);
+                ViewBag.ProID = new SelectList(db.ProDetails, "ProID", "ColorName", product.ProID);
+                return View(product);
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Products/Edit/5
@@ -132,5 +150,6 @@ namespace Đồ_án_Web.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

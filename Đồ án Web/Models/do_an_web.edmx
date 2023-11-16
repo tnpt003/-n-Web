@@ -207,7 +207,7 @@
           <Property Name="ProID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CatID" Type="Int32" Nullable="false" />
-          <Property Name="ProImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProImage" Type="String" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ProDetail" Relationship="Self.FK_ProDetail_Product" FromRole="Product" ToRole="ProDetail" />

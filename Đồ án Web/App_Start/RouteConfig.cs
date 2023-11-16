@@ -19,11 +19,6 @@ namespace Đồ_án_Web
                 defaults: new { controller = "Categories", action = "Index", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-                name: "Admin",
-                url: "Admin/{action}/{id}",
-                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
-            );
 
             routes.MapRoute(
                 name: "ProDetails",

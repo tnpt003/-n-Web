@@ -11,9 +11,15 @@ namespace Đồ_án_Web.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class Product
     {
+        public Product() 
+        {
+            ProImage = "~/Content/images/add.png";
+        }
         public int ProID { get; set; }
         public string ProName { get; set; }
         public int CatID { get; set; }
@@ -21,6 +27,8 @@ namespace Đồ_án_Web.Models
         public System.DateTime CreatedDate { get; set; }
     
         public virtual Category Category { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageUpLoad { get; set; }
         public virtual ProDetail ProDetail { get; set; }
     }
 }

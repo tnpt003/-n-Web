@@ -82,8 +82,14 @@ namespace Đồ_án_Web.Controllers
             // Check if the email and password match a customer in the database
             var customer = db.Customers.FirstOrDefault(c => c.CusEmail == email && c.CusPassword == password);
 
+
             if (customer != null)
             {
+                if (email == "admin@example.com" && password == "adminpassword")
+                {
+                    // Redirect to Admin page if the user is an admin
+                    return RedirectToAction("Index", "Admin");
+                }
                 bool isAuthenticated = true;
                 ViewBag.IsAuthenticated = isAuthenticated;
                 return RedirectToAction("Index", "Home");
@@ -94,6 +100,7 @@ namespace Đồ_án_Web.Controllers
                 ViewBag.IsAuthenticated = false;
                 return View("Login");
             }
+
         }
 
 
