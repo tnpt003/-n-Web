@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Đồ_án_Web.Models.Product>
-@{
+﻿@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/Master_Layout.cshtml";
     var productId = Request.QueryString["product"];
@@ -14,7 +13,6 @@
 </head>
 <body>
     <!--~~~~~~~~~~~~~~~~~~~~~CONTENTS~~~~~~~~~~~~~~~~~~~~~-->
-
     <div class="big-banner">
         <a href="#"><img src="~/hình/big banner/5313737.jpg" alt="Banner Image" /></a>
     </div>
@@ -149,26 +147,15 @@
     <div class="section-title5">
         <h3>GỢI Ý HÔM NAY</h3>
         <div class="content-section5">
-            <div class="image-container1">
-                <div class="image-container1">
-                    @foreach (var products in Model)
-                    {
-                        <div class="image-container1">
-                            <a href="@Url.Action("ProductDetail", "ProductDetail", new { product = 1 })">
-                                <img src="@Url.Content(products.ProImage)" />
-                                <p>@products.ProName</p>
-                                <strong>@products.ProDetail.Price</strong>
-                            </a>
-                        </div>
-                    }
-                    @*<a href="@Url.Action("ProductDetail", "ProductDetail", new { product = 1 })">
-                        <img src="~/hình/Gợi ý hôm nay/1_2927cf620c864fb997ef807defd82e7e_master.jpg" />
-                        <p>Móc khóa da bò Kenta PMK0001</p>
-                        <strong>19,000₫</strong>
-                    </a>*@
-                </div>
-            </div>
-            <div class="image-container1">
+            @*<div class="image-container1">*@
+                @Html.Action("Gihn", "Products")
+                @*<a href="@Url.Action("ProductDetail", "ProductDetail", new { product = 1 })">
+                    <img src="~/hình/Gợi ý hôm nay/1_2927cf620c864fb997ef807defd82e7e_master.jpg" />
+                    <p>Móc khóa da bò Kenta PMK0001</p>
+                    <strong>19,000₫</strong>
+                </a>*@
+            @*</div>*@
+            @*<div class="image-container1">
                 <a href="@Url.Action("ProductDetail", "ProductDetail", new { product = 2 })">
                     <img src="~/hình/Gợi ý hôm nay/1_32e4055326d04de6b28f7c12f44550b9_master.jpg" />
                     <p>Túi đeo chạy bộ PTX0003</p>
@@ -265,7 +252,7 @@
                     <p>Quần Jean Skinny Nam QJD0061</p>
                     <strong>450,000₫</strong>
                 </a>
-            </div>
+            </div>*@
         </div>
     </div>
     <script src="~/Scripts/FRONTEND/Product_Detail.js"></script>

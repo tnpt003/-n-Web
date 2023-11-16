@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Đồ_án_Web.Models.Product>
+<link href="@Url.Content("~/Content/FRONTEND/Home.css")" rel="stylesheet" />
+
+@foreach (var product in Model)
+{<div class="image-container1">
+    <a href="@Url.Action("ProductDetail", "ProductDetail", new { product = product.ProID })">
+        <img src="@Url.Content(product.ProImage)" />
+        <p>@product.ProName</p>
+    </a>
+</div>
+}

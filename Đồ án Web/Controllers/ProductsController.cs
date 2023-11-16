@@ -150,6 +150,12 @@ namespace Đồ_án_Web.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Gihn()
+        {
+            // Retrieve products from your data source (database, service, etc.)
+            var products = db.Products.Include(p => p.Category).Include(p => p.ProDetail);
+            return PartialView("~/Views/Shared/gihn.cshtml", products);
+        }
 
     }
 }
