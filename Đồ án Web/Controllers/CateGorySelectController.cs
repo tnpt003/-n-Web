@@ -9,38 +9,44 @@ using System.Web;
 using System.Web.Mvc;
 using Đồ_án_Web.Models;
 
-
 namespace Đồ_án_Web.Controllers
 {
-    public class ProductDetailController : Controller
+    public class CateGorySelectController : Controller
     {
         private nhomEntities db = new nhomEntities();
-        // GET: ProductDetail
-        public ActionResult ProductDetail(int productId)
+        // GET: CateGorySelect
+        // Action method to display category details
+        public ActionResult CategoryDetails(int catId)
         {
-            var product = db.Products.Include(p => p.Category).Include(p => p.ProDetail)
-                        .FirstOrDefault(p => p.ProID == productId);
-
-            if (product == null)
+            var category = db.Categories.FirstOrDefault(c => c.CatID == catId);
+            if (category == null)
             {
-                return HttpNotFound(); // Handle case where product is not found
+                return HttpNotFound(); // Handle case where category is not found
             }
-            return View(product);
+
+            return View(category);
         }
 
-        // GET: ProductDetail/Details/5
+        // Action method to fetch products for a specific category
+        public ActionResult GetProductsForCategory(int catId)
+        {
+            var products = db.Products.Where(p => p.CatID == catId).ToList();
+            return PartialView("ghtn", products);
+        }
+
+        // GET: CateGorySelect/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: ProductDetail/Create
+        // GET: CateGorySelect/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ProductDetail/Create
+        // POST: CateGorySelect/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -56,13 +62,13 @@ namespace Đồ_án_Web.Controllers
             }
         }
 
-        // GET: ProductDetail/Edit/5
+        // GET: CateGorySelect/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ProductDetail/Edit/5
+        // POST: CateGorySelect/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -78,13 +84,13 @@ namespace Đồ_án_Web.Controllers
             }
         }
 
-        // GET: ProductDetail/Delete/5
+        // GET: CateGorySelect/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ProductDetail/Delete/5
+        // POST: CateGorySelect/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CateGorySelectController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
@@ -386,6 +387,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="bin\Đồ án Web.dll.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\FRONTEND\Category.js" />
     <Content Include="Scripts\FRONTEND\Product_Detail.js" />
     <Content Include="Scripts\FRONTEND\Slider.js" />
     <Content Include="Scripts\FRONTEND\Xem_Them.js" />
@@ -448,6 +450,7 @@
     <Content Include="Views\Account\Success.cshtml" />
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Shared\gihn.cshtml" />
+    <Content Include="Views\CateGorySelect\CateGorySelect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
