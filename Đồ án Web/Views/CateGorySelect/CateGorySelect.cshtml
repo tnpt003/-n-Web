@@ -15,8 +15,11 @@
 </head>
 <body>
     <h1 id="category-title">@Model.NameCate</h1>
-    <div class="products-container">
-        @Html.Action("GetProductsForCategory", "CateGorySelect", new { catId = Model.CatID })
+    <div class="section-title5">
+        <h3>GỢI Ý HÔM NAY</h3>
+        <div class="content-section5">
+            @Html.Action("GetProductsForCategory", "CateGorySelect", new { catId = Model.CatID })
+        </div>
     </div>
 </body>
 </html>

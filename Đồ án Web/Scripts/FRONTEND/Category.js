@@ -5,7 +5,7 @@
         var catId = $(this).data('catid');
         // Ajax request to fetch product details based on productId
         $.ajax({
-            url: '/CateGorySelect/CateGorySelect', // Adjust this URL to match your route
+            url: '/CateGorySelect/GetProductsForCategory', // Adjust this URL to match your route
             type: 'GET',
             data: { catId: catId },
             success: function (result) {

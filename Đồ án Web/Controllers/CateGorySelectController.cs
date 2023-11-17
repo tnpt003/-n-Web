@@ -16,7 +16,7 @@ namespace Đồ_án_Web.Controllers
         private nhomEntities db = new nhomEntities();
         // GET: CateGorySelect
         // Action method to display category details
-        public ActionResult CategoryDetails(int catId)
+        public ActionResult CateGorySelect(int catId)
         {
             var category = db.Categories.FirstOrDefault(c => c.CatID == catId);
             if (category == null)
@@ -31,7 +31,7 @@ namespace Đồ_án_Web.Controllers
         public ActionResult GetProductsForCategory(int catId)
         {
             var products = db.Products.Where(p => p.CatID == catId).ToList();
-            return PartialView("ghtn", products);
+            return PartialView("gihn", products);
         }
 
         // GET: CateGorySelect/Details/5
