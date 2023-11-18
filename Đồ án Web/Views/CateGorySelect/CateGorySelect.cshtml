@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1 id="category-title">@Model.NameCate</h1>
     <div class="section-title5">
-        <h3>GỢI Ý HÔM NAY</h3>
+        <h1 id="category-title">@Model.NameCate</h1>
         <div class="content-section5">
             @Html.Action("GetProductsForCategory", "CateGorySelect", new { catId = Model.CatID })
         </div>

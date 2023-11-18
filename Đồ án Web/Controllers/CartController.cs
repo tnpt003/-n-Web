@@ -1,19 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Đồ_án_Web.Models; 
 
 namespace Đồ_án_Web.Controllers
 {
     public class CartController : Controller
     {
+        private nhomEntities db = new nhomEntities();
         // GET: Cart
-        public ActionResult Cart()
+        public ActionResult Empty()
         {
             return View();
         }
+        public ActionResult Cart(int productId)
+        {
+            var product = db.Products.Include(p => p.Category).Include(p => p.ProDetail)
+                        .FirstOrDefault(p => p.ProID == productId);
 
+            if (product == null)
+            {
+                return HttpNotFound(); // Handle case where product is not found
+            }
+            return View(product);
+        }
+        // GET: ProductDetail
         // GET: Cart/Details/5
         public ActionResult Details(int id)
         {

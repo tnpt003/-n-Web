@@ -26,7 +26,7 @@
                         <input type="text" class="search-input" placeholder="Search...">
                     </div>
                 </li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>@Html.ActionLink("Giỏ hàng", "Cart", "Cart")</a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>@Html.ActionLink("Giỏ hàng", "Empty", "Cart")</a></li>
                 <li>@ViewBag.IsAuthenticated</li>
                 @if (ViewBag.IsAuthenticated != null && ViewBag.IsAuthenticated == true)
                 {

@@ -1,0 +1,38 @@
+﻿.wrapper {
+    padding: 20px;
+    border-radius: 10px;
+    width: 700px;
+    margin: 200px auto;
+    background-color: #ccc;
+}
+
+    .wrapper .item-wrapper {
+        margin-top: 10px;
+        display: flex;
+    }
+
+    .wrapper .item-wrapper-img img {
+        border-radius: 15px;
+    }
+
+    .wrapper .item-wrapper-info {
+        padding-left: 10px;
+    }
+
+        .wrapper .item-wrapper-info h3 {
+            margin: 0;
+        }
+
+    .wrapper .item-wrapper-price {
+        margin-left: 300px;
+        font-size: 20px;
+    }
+
+        .wrapper .item-wrapper-price .price-wrapper {
+            color: red;
+        }
+
+        .wrapper .item-wrapper-price .pricediscount-wrapper {
+            color: #aaa;
+            text-decoration: line-through;
+        }
