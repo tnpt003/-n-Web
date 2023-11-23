@@ -9,113 +9,113 @@
     <title>Master_Layout</title>
 </head>
 <body>
-    @* HEADER *@
-    <header>
-        <a href="~/Views/FrontEnd/Index.cshtml">
-            <img src="~/hình/Header/logo.png" alt="Company Logo" />
-        </a>
-    </header>
-    <nav>
-        <div class="container">
-            <ul class="product-categories">
-                <li><a href="/Home/Index"><img src="~/hình/Header/logo.png" alt="Company Logo" style="width: 80px;" /></a></li>
-                <li><a href="#">Hồ Chí Minh</a></li>
-                <li>
-                    <div class="input-container">
-                        <i class="fas fa-search"></i>
-                        <input type="text" class="search-input" placeholder="Search...">
-                    </div>
-                </li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>@Html.ActionLink("Giỏ hàng", "Empty", "Cart")</a></li>
-                <li>@ViewBag.IsAuthenticated</li>
-                @if (ViewBag.IsAuthenticated != null && ViewBag.IsAuthenticated == true)
-                {
-                    <!-- User is authenticated, display logged-in user info or other content -->
-                    <!-- Example: <li>Welcome, [User Name]!</li> -->
-                }
-                else
-                {
-                    <!-- User is not authenticated, display login and sign-up links -->
-                    <li>@Html.ActionLink("Đăng Ký", "SignUp", "Account")</li>
-                    <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
-                }
+    <div class="scale">
+        @* HEADER *@
+        <header>
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/hình/Header/logo.png" alt="Company Logo" />
+            </a>
+        </header>
+        <nav>
+            <div class="container">
+                <ul class="product-categories">
+                    <li><a href="@Url.Action("Index", "Home")"><img src="~/hình/Header/logo.png" alt="Company Logo" style="width: 80px;" /></a></li>
+                    <li><a href="#">Hồ Chí Minh</a></li>
+                    <li>
+                        <div class="input-container">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="search-input" placeholder="Search...">
+                        </div>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>@Html.ActionLink("Giỏ hàng", "Empty", "Cart")</a></li>
+                    <li>@ViewBag.IsAuthenticated</li>
+                    @if (ViewBag.IsAuthenticated != null && ViewBag.IsAuthenticated == true)
+                    {
+                        <!-- User is authenticated, display logged-in user info or other content -->
+                        <!-- Example: <li>Welcome, [User Name]!</li> -->
+                    }
+                    else
+                    {
+                        <!-- User is not authenticated, display login and sign-up links -->
+                        <li>@Html.ActionLink("Đăng Ký", "SignUp", "Account")</li>
+                        <li>@Html.ActionLink("Đăng Nhập", "Login", "Account")</li>
+                    }
 
-                <li><a href="#">24h Trend</a></li>
-                <li><a href="#">Hỏi đáp</a></li>
-            </ul>
-        </div>
-    </nav>
-    <section class="menu-bar">
-        <div class="container">
-            <div class="menu-bar-content">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 1 })">Áo khoác</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Áo khoác Ni</p></a>
-                            <a href="#"><p>Áo khoác Dù</p></a>
-                            <a href="#"><p>Áo khoác Kaki</p></a>
-                            <a href="#"><p>Áo khoác Nam</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 2 })">Áo thun</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Áo thun tay ngắn</p></a>
-                            <a href="#"><p>Áo thun tay dài</p></a>
-                            <a href="#"><p>Áo thun Polo</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 3 })">Sơ mi</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Sơ mi tay ngắn</p></a>
-                            <a href="#"><p>Sơ mi tay dài</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 4 })">Quần dài</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Quần Kaki</p></a>
-                            <a href="#"><p>Quần Tây</p></a>
-                            <a href="#"><p>Quần Jean</p></a>
-                            <a href="#"><p>Quần Jagger Thun</p></a>
-                            <a href="#"><p>Quần Jagger Kaki</p></a>
-                            <a href="#"><p>Quần Kaki</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 5 })">Quần short</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Quần Short Kaki</p></a>
-                            <a href="#"><p>Quần Short Thun</p></a>
-                            <a href="#"><p>Quần Short Jean</p></a>
-                            <a href="#"><p>Quần Short Tây</p></a>
-                            <a href="#"><p>Quần Short Dù</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 6 })">Phụ kiện</a><i class="fa-solid fa-chevron-down"></i>
-                        <div class="hidden-content">
-                            <a href="#"><p>Ví da</p></a>
-                            <a href="#"><p>Dây vịt</p></a>
-                            <a href="#"><p>Nơ - Cà Vạt</p></a>
-                            <a href="#"><p>Vớ (Tất)</p></a>
-                            <a href="#"><p>Nón</p></a>
-                            <a href="#"><p>Ví da</p></a>
-                        </div>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 7 })">All</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 8 })">Sale</a>
-                    </li>
+                    <li><a href="#">24h Trend</a></li>
+                    <li><a href="#">Hỏi đáp</a></li>
                 </ul>
             </div>
-        </div>
-    </section>
-    <div class="scale">
+        </nav>
+        <section class="menu-bar">
+            <div class="container">
+                <div class="menu-bar-content">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 1 })">Áo khoác</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Áo khoác Ni</p></a>
+                                <a href="#"><p>Áo khoác Dù</p></a>
+                                <a href="#"><p>Áo khoác Kaki</p></a>
+                                <a href="#"><p>Áo khoác Nam</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 2 })">Áo thun</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Áo thun tay ngắn</p></a>
+                                <a href="#"><p>Áo thun tay dài</p></a>
+                                <a href="#"><p>Áo thun Polo</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 3 })">Sơ mi</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Sơ mi tay ngắn</p></a>
+                                <a href="#"><p>Sơ mi tay dài</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 4 })">Quần dài</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Quần Kaki</p></a>
+                                <a href="#"><p>Quần Tây</p></a>
+                                <a href="#"><p>Quần Jean</p></a>
+                                <a href="#"><p>Quần Jagger Thun</p></a>
+                                <a href="#"><p>Quần Jagger Kaki</p></a>
+                                <a href="#"><p>Quần Kaki</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 5 })">Quần short</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Quần Short Kaki</p></a>
+                                <a href="#"><p>Quần Short Thun</p></a>
+                                <a href="#"><p>Quần Short Jean</p></a>
+                                <a href="#"><p>Quần Short Tây</p></a>
+                                <a href="#"><p>Quần Short Dù</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 6 })">Phụ kiện</a><i class="fa-solid fa-chevron-down"></i>
+                            <div class="hidden-content">
+                                <a href="#"><p>Ví da</p></a>
+                                <a href="#"><p>Dây vịt</p></a>
+                                <a href="#"><p>Nơ - Cà Vạt</p></a>
+                                <a href="#"><p>Vớ (Tất)</p></a>
+                                <a href="#"><p>Nón</p></a>
+                                <a href="#"><p>Ví da</p></a>
+                            </div>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 7 })">All</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("CateGorySelect", "CateGorySelect", new { CatId = 8 })">Sale</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         @RenderBody()
 
 

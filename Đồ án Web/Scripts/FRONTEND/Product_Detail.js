@@ -21,22 +21,22 @@ btnNo.addEventListener("click", function () {
     dialogContainer.style.display = "none"; // Hide the dialog
 });
 
-$('#btnYes').on('click', function () {
-    // Perform AJAX POST request to update cart
-    $.ajax({
-        url: '/Cart/Cart', // Update this URL with your controller action URL
-        type: 'POST', // Or 'GET' depending on your action method
-        data: {}, // You may send additional data if required
-        success: function (response) {
-            // Assuming the response contains the updated cart HTML content
-            // Replace the existing cart content with the updated content
-            $('#cartContent').html(response);
-        },
-        error: function () {
-            console.log('Error updating the cart.');
-        }
-    });
-});
+//$('#btnYes').on('click', function () {
+//    // Perform AJAX POST request to update cart
+//    $.ajax({
+//        url: '/Cart/Cart', // Update this URL with your controller action URL
+//        type: 'POST', // Or 'GET' depending on your action method
+//        data: {}, // You may send additional data if required
+//        success: function (response) {
+//            // Assuming the response contains the updated cart HTML content
+//            // Replace the existing cart content with the updated content
+//            $('#cartContent').html(response);
+//        },
+//        error: function () {
+//            console.log('Error updating the cart.');
+//        }
+//    });
+//});
 
     ////< !--~~~~~~~~~~~~~~~~~~~~~CHI TIẾT KHI CHỌN SẢN PHẨM~~~~~~~~~~~~~~~~~~~~~-->
     //// Function to extract the product ID from the URL

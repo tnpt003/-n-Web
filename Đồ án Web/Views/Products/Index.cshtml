@@ -22,9 +22,6 @@
             @Html.DisplayNameFor(model => model.ProImage)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Category.NameCate)
         </th>
         <th></th>
@@ -41,9 +38,6 @@
             </td>
             <td>
                 <img src="@Url.Content(item.ProImage)" style="height: 100px; width: 100px;" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.NameCate)

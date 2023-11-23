@@ -128,5 +128,10 @@ namespace Đồ_án_Web.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Order()
+        {
+            var orders = db.Orders.Include(o => o.Customer);
+            return PartialView("~/Views/Shared/OrderCus.cshtml", orders);
+        }
     }
 }
